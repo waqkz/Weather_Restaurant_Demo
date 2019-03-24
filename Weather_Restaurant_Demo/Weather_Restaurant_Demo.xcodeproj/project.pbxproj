@@ -7,21 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141435546E34A14F2C70CA1B /* Pods_Weather_Restaurant_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EEA708954871940117CD19 /* Pods_Weather_Restaurant_Demo.framework */; };
 		C238EC042246294F00F8C427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC032246294F00F8C427 /* AppDelegate.swift */; };
-		C238EC062246294F00F8C427 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC052246294F00F8C427 /* ViewController.swift */; };
 		C238EC092246294F00F8C427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C238EC072246294F00F8C427 /* Main.storyboard */; };
 		C238EC0B2246295000F8C427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C238EC0A2246295000F8C427 /* Assets.xcassets */; };
 		C238EC0E2246295000F8C427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C238EC0C2246295000F8C427 /* LaunchScreen.storyboard */; };
+		C238EC1B22462D6A00F8C427 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC1A22462D6A00F8C427 /* BaseViewController.swift */; };
+		C238EC2322462E3500F8C427 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2222462E3500F8C427 /* UITextField+Extensions.swift */; };
+		C238EC2522462E4B00F8C427 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2422462E4B00F8C427 /* UIView+Extensions.swift */; };
+		C238EC2722462E7200F8C427 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2622462E7200F8C427 /* UIColor+Extensions.swift */; };
+		C238EC2922462E8800F8C427 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2822462E8800F8C427 /* UINavigationController+Extensions.swift */; };
+		C238EC2B22462E9F00F8C427 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2A22462E9F00F8C427 /* UILabel+Extensions.swift */; };
+		C238EC2D22462EBE00F8C427 /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2C22462EBE00F8C427 /* UIScreen+Extensions.swift */; };
+		C238EC2F22462ECE00F8C427 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC2E22462ECE00F8C427 /* Dictionary+Extensions.swift */; };
+		C238EC3122462EF200F8C427 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC3022462EF200F8C427 /* String+Extensions.swift */; };
+		C238EC3322462F1200F8C427 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC3222462F1200F8C427 /* UIButton+Extensions.swift */; };
+		C238EC3622462F5E00F8C427 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238EC3522462F5E00F8C427 /* Constants.swift */; };
+		C2495D4A22464468002F378E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2495D4922464468002F378E /* WeatherViewController.swift */; };
+		C2495D4C2246465C002F378E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2495D4B2246465C002F378E /* Alert.swift */; };
+		C2495D4E22464933002F378E /* SizeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2495D4D22464933002F378E /* SizeUtil.swift */; };
+		C29F08DD224692AB0063B8A9 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29F08DC224692AB0063B8A9 /* WeatherCollectionViewCell.xib */; };
+		C29F08DF224692B90063B8A9 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F08DE224692B90063B8A9 /* WeatherCollectionViewCell.swift */; };
+		C29F9F3122478C4C001E9019 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3022478C4C001E9019 /* RestaurantViewController.swift */; };
+		C29F9F3322479927001E9019 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3222479927001E9019 /* CustomNavigationController.swift */; };
+		C29F9F3522479A04001E9019 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3422479A04001E9019 /* SplashViewController.swift */; };
+		C29F9F3722479B45001E9019 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3622479B45001E9019 /* AppHelper.swift */; };
+		C29F9F3A2247A411001E9019 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29F9F392247A411001E9019 /* RestaurantTableViewCell.xib */; };
+		C29F9F3C2247A426001E9019 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3B2247A426001E9019 /* RestaurantTableViewCell.swift */; };
+		C29F9F3F2247C654001E9019 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3E2247C654001E9019 /* APIManager.swift */; };
+		C29F9F412247DB8B001E9019 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F402247DB8A001E9019 /* ConnectionHelper.swift */; };
+		C29F9F432247DBEF001E9019 /* Servicelayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F422247DBEF001E9019 /* Servicelayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73EEA708954871940117CD19 /* Pods_Weather_Restaurant_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_Restaurant_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BD0355FC104C621C5742B2 /* Pods-Weather_Restaurant_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_Restaurant_Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_Restaurant_Demo/Pods-Weather_Restaurant_Demo.release.xcconfig"; sourceTree = "<group>"; };
+		BB2F5A75CE66D0E6D16A7B22 /* Pods-Weather_Restaurant_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_Restaurant_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_Restaurant_Demo/Pods-Weather_Restaurant_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C238EC002246294F00F8C427 /* Weather_Restaurant_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather_Restaurant_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C238EC032246294F00F8C427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C238EC052246294F00F8C427 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C238EC082246294F00F8C427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C238EC0A2246295000F8C427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C238EC0D2246295000F8C427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C238EC0F2246295000F8C427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C238EC1A22462D6A00F8C427 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C238EC2222462E3500F8C427 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC2422462E4B00F8C427 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC2622462E7200F8C427 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC2822462E8800F8C427 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC2A22462E9F00F8C427 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC2C22462EBE00F8C427 /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC2E22462ECE00F8C427 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC3022462EF200F8C427 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC3222462F1200F8C427 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		C238EC3522462F5E00F8C427 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C2495D4922464468002F378E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		C2495D4B2246465C002F378E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C2495D4D22464933002F378E /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
+		C29F08DC224692AB0063B8A9 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
+		C29F08DE224692B90063B8A9 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		C29F9F3022478C4C001E9019 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		C29F9F3222479927001E9019 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		C29F9F3422479A04001E9019 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C29F9F3622479B45001E9019 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		C29F9F392247A411001E9019 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		C29F9F3B2247A426001E9019 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		C29F9F3E2247C654001E9019 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C29F9F402247DB8A001E9019 /* ConnectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
+		C29F9F422247DBEF001E9019 /* Servicelayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicelayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +81,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141435546E34A14F2C70CA1B /* Pods_Weather_Restaurant_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D22B037BBCE68353B0E6346 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB2F5A75CE66D0E6D16A7B22 /* Pods-Weather_Restaurant_Demo.debug.xcconfig */,
+				91BD0355FC104C621C5742B2 /* Pods-Weather_Restaurant_Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		96DD3E13BF7D8C8F4110BDF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73EEA708954871940117CD19 /* Pods_Weather_Restaurant_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C238EBF72246294F00F8C427 = {
 			isa = PBXGroup;
 			children = (
 				C238EC022246294F00F8C427 /* Weather_Restaurant_Demo */,
 				C238EC012246294F00F8C427 /* Products */,
+				6D22B037BBCE68353B0E6346 /* Pods */,
+				96DD3E13BF7D8C8F4110BDF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +126,174 @@
 		C238EC022246294F00F8C427 /* Weather_Restaurant_Demo */ = {
 			isa = PBXGroup;
 			children = (
-				C238EC032246294F00F8C427 /* AppDelegate.swift */,
-				C238EC052246294F00F8C427 /* ViewController.swift */,
-				C238EC072246294F00F8C427 /* Main.storyboard */,
-				C238EC0A2246295000F8C427 /* Assets.xcassets */,
-				C238EC0C2246295000F8C427 /* LaunchScreen.storyboard */,
-				C238EC0F2246295000F8C427 /* Info.plist */,
+				C238EC15224629F700F8C427 /* AppDelegate */,
+				C238EC1622462BF700F8C427 /* SupportingFiles */,
+				C238EC1722462C1600F8C427 /* Storyboards */,
+				C238EC1822462C2D00F8C427 /* ViewControllers */,
+				C29F9F3D2247BF1A001E9019 /* ApiModule */,
+				C29F9F442247E383001E9019 /* Services */,
+				C238EC1D22462DD000F8C427 /* Nibs */,
+				C238EC1E22462DF500F8C427 /* HelperClasses */,
+				C238EC3422462F4400F8C427 /* Constants */,
 			);
 			path = Weather_Restaurant_Demo;
+			sourceTree = "<group>";
+		};
+		C238EC15224629F700F8C427 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC032246294F00F8C427 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C238EC1622462BF700F8C427 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC0F2246295000F8C427 /* Info.plist */,
+				C238EC0A2246295000F8C427 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C238EC1722462C1600F8C427 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC0C2246295000F8C427 /* LaunchScreen.storyboard */,
+				C238EC072246294F00F8C427 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C238EC1822462C2D00F8C427 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC1922462D4D00F8C427 /* HelperViewControllers */,
+				C238EC1C22462D8300F8C427 /* WeatherModuleViewControllers */,
+				C29F9F2F22478C2D001E9019 /* RestaurantModuleViewControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C238EC1922462D4D00F8C427 /* HelperViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC1A22462D6A00F8C427 /* BaseViewController.swift */,
+				C29F9F3222479927001E9019 /* CustomNavigationController.swift */,
+			);
+			path = HelperViewControllers;
+			sourceTree = "<group>";
+		};
+		C238EC1C22462D8300F8C427 /* WeatherModuleViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C29F9F3422479A04001E9019 /* SplashViewController.swift */,
+				C2495D4922464468002F378E /* WeatherViewController.swift */,
+			);
+			path = WeatherModuleViewControllers;
+			sourceTree = "<group>";
+		};
+		C238EC1D22462DD000F8C427 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				C29F08DB224692920063B8A9 /* WeatherNibs */,
+				C29F9F382247A3F1001E9019 /* RestaurantNibs */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		C238EC1E22462DF500F8C427 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC1F22462E0800F8C427 /* Enums */,
+				C238EC2022462E0F00F8C427 /* Utilities */,
+				C238EC2122462E1600F8C427 /* Extensions */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		C238EC1F22462E0800F8C427 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		C238EC2022462E0F00F8C427 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C2495D4B2246465C002F378E /* Alert.swift */,
+				C2495D4D22464933002F378E /* SizeUtil.swift */,
+				C29F9F3622479B45001E9019 /* AppHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C238EC2122462E1600F8C427 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC2222462E3500F8C427 /* UITextField+Extensions.swift */,
+				C238EC2422462E4B00F8C427 /* UIView+Extensions.swift */,
+				C238EC2622462E7200F8C427 /* UIColor+Extensions.swift */,
+				C238EC2822462E8800F8C427 /* UINavigationController+Extensions.swift */,
+				C238EC2A22462E9F00F8C427 /* UILabel+Extensions.swift */,
+				C238EC2C22462EBE00F8C427 /* UIScreen+Extensions.swift */,
+				C238EC2E22462ECE00F8C427 /* Dictionary+Extensions.swift */,
+				C238EC3022462EF200F8C427 /* String+Extensions.swift */,
+				C238EC3222462F1200F8C427 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C238EC3422462F4400F8C427 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C238EC3522462F5E00F8C427 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C29F08DB224692920063B8A9 /* WeatherNibs */ = {
+			isa = PBXGroup;
+			children = (
+				C29F08DC224692AB0063B8A9 /* WeatherCollectionViewCell.xib */,
+				C29F08DE224692B90063B8A9 /* WeatherCollectionViewCell.swift */,
+			);
+			path = WeatherNibs;
+			sourceTree = "<group>";
+		};
+		C29F9F2F22478C2D001E9019 /* RestaurantModuleViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C29F9F3022478C4C001E9019 /* RestaurantViewController.swift */,
+			);
+			path = RestaurantModuleViewControllers;
+			sourceTree = "<group>";
+		};
+		C29F9F382247A3F1001E9019 /* RestaurantNibs */ = {
+			isa = PBXGroup;
+			children = (
+				C29F9F392247A411001E9019 /* RestaurantTableViewCell.xib */,
+				C29F9F3B2247A426001E9019 /* RestaurantTableViewCell.swift */,
+			);
+			path = RestaurantNibs;
+			sourceTree = "<group>";
+		};
+		C29F9F3D2247BF1A001E9019 /* ApiModule */ = {
+			isa = PBXGroup;
+			children = (
+				C29F9F3E2247C654001E9019 /* APIManager.swift */,
+				C29F9F402247DB8A001E9019 /* ConnectionHelper.swift */,
+				C29F9F422247DBEF001E9019 /* Servicelayer.swift */,
+			);
+			path = ApiModule;
+			sourceTree = "<group>";
+		};
+		C29F9F442247E383001E9019 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +303,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C238EC122246295000F8C427 /* Build configuration list for PBXNativeTarget "Weather_Restaurant_Demo" */;
 			buildPhases = (
+				046B088983BAE9482B0EC967 /* [CP] Check Pods Manifest.lock */,
 				C238EBFC2246294F00F8C427 /* Sources */,
 				C238EBFD2246294F00F8C427 /* Frameworks */,
 				C238EBFE2246294F00F8C427 /* Resources */,
+				7956DDDB4630F2A4DE54EEBB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +357,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C238EC0E2246295000F8C427 /* LaunchScreen.storyboard in Resources */,
+				C29F08DD224692AB0063B8A9 /* WeatherCollectionViewCell.xib in Resources */,
+				C29F9F3A2247A411001E9019 /* RestaurantTableViewCell.xib in Resources */,
 				C238EC0B2246295000F8C427 /* Assets.xcassets in Resources */,
 				C238EC092246294F00F8C427 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +366,88 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		046B088983BAE9482B0EC967 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Weather_Restaurant_Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7956DDDB4630F2A4DE54EEBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Weather_Restaurant_Demo/Pods-Weather_Restaurant_Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CDAlertView/CDAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather_Restaurant_Demo/Pods-Weather_Restaurant_Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C238EBFC2246294F00F8C427 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C238EC062246294F00F8C427 /* ViewController.swift in Sources */,
+				C238EC3122462EF200F8C427 /* String+Extensions.swift in Sources */,
+				C29F9F432247DBEF001E9019 /* Servicelayer.swift in Sources */,
+				C29F08DF224692B90063B8A9 /* WeatherCollectionViewCell.swift in Sources */,
+				C238EC2322462E3500F8C427 /* UITextField+Extensions.swift in Sources */,
+				C238EC2922462E8800F8C427 /* UINavigationController+Extensions.swift in Sources */,
+				C29F9F3F2247C654001E9019 /* APIManager.swift in Sources */,
+				C238EC2F22462ECE00F8C427 /* Dictionary+Extensions.swift in Sources */,
+				C2495D4A22464468002F378E /* WeatherViewController.swift in Sources */,
+				C238EC2722462E7200F8C427 /* UIColor+Extensions.swift in Sources */,
+				C2495D4C2246465C002F378E /* Alert.swift in Sources */,
 				C238EC042246294F00F8C427 /* AppDelegate.swift in Sources */,
+				C238EC2522462E4B00F8C427 /* UIView+Extensions.swift in Sources */,
+				C29F9F3122478C4C001E9019 /* RestaurantViewController.swift in Sources */,
+				C2495D4E22464933002F378E /* SizeUtil.swift in Sources */,
+				C29F9F3322479927001E9019 /* CustomNavigationController.swift in Sources */,
+				C238EC2D22462EBE00F8C427 /* UIScreen+Extensions.swift in Sources */,
+				C29F9F412247DB8B001E9019 /* ConnectionHelper.swift in Sources */,
+				C29F9F3522479A04001E9019 /* SplashViewController.swift in Sources */,
+				C29F9F3722479B45001E9019 /* AppHelper.swift in Sources */,
+				C238EC1B22462D6A00F8C427 /* BaseViewController.swift in Sources */,
+				C238EC3322462F1200F8C427 /* UIButton+Extensions.swift in Sources */,
+				C238EC2B22462E9F00F8C427 /* UILabel+Extensions.swift in Sources */,
+				C29F9F3C2247A426001E9019 /* RestaurantTableViewCell.swift in Sources */,
+				C238EC3622462F5E00F8C427 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +591,12 @@
 		};
 		C238EC132246295000F8C427 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB2F5A75CE66D0E6D16A7B22 /* Pods-Weather_Restaurant_Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Weather_Restaurant_Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Weather_Restaurant_Demo/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +611,12 @@
 		};
 		C238EC142246295000F8C427 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91BD0355FC104C621C5742B2 /* Pods-Weather_Restaurant_Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Weather_Restaurant_Demo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Weather_Restaurant_Demo/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
