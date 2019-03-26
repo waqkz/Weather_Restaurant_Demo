@@ -14,5 +14,10 @@ struct EndPoints {
         static let BaseUrl =  "https://api.openweathermap.org"
         static let WeatherForcastUrl = "\(BaseUrl)/data/2.5/forecast"
         static let WeatherForcastImageUrl = "\(BaseUrl)/img/w/"
+        
+        static let RestaurantBaseUrl =  "https://maps.googleapis.com"
+        static let RestaurantUrl = "\(RestaurantBaseUrl)/maps/api/place/nearbysearch/json"
+        static let RestaurantPhotoUrl =  "\(RestaurantBaseUrl)/maps/api/place/photo?maxwidth=400&photoreference="
+        static let RestaurantPhotoKey =  "&key=AIzaSyASsrdsiQ9XYq0Pd6lU-o4lxBRrFE_hUno"
     }
 }

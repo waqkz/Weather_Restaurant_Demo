@@ -27,6 +27,17 @@
 		C2495D4A22464468002F378E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2495D4922464468002F378E /* WeatherViewController.swift */; };
 		C2495D4C2246465C002F378E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2495D4B2246465C002F378E /* Alert.swift */; };
 		C2495D4E22464933002F378E /* SizeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2495D4D22464933002F378E /* SizeUtil.swift */; };
+		C25D67E9224A3068000078D5 /* RestaurantServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67E8224A3068000078D5 /* RestaurantServices.swift */; };
+		C25D67EC224A3487000078D5 /* NearbyRestaurantModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67EB224A3487000078D5 /* NearbyRestaurantModal.swift */; };
+		C25D67EE224A34D6000078D5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67ED224A34D6000078D5 /* Result.swift */; };
+		C25D67F0224A34EF000078D5 /* PlusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67EF224A34EF000078D5 /* PlusCode.swift */; };
+		C25D67F2224A39F0000078D5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67F1224A39F0000078D5 /* Photo.swift */; };
+		C25D67F4224A3A0D000078D5 /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67F3224A3A0D000078D5 /* OpeningHour.swift */; };
+		C25D67F6224A3A27000078D5 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67F5224A3A27000078D5 /* Geometry.swift */; };
+		C25D67F8224A3A3C000078D5 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67F7224A3A3C000078D5 /* Viewport.swift */; };
+		C25D67FA224A3A52000078D5 /* Southwest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67F9224A3A52000078D5 /* Southwest.swift */; };
+		C25D67FC224A3A6B000078D5 /* Northeast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67FB224A3A6B000078D5 /* Northeast.swift */; };
+		C25D67FE224A3A80000078D5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25D67FD224A3A80000078D5 /* Location.swift */; };
 		C29F08DD224692AB0063B8A9 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C29F08DC224692AB0063B8A9 /* WeatherCollectionViewCell.xib */; };
 		C29F08DF224692B90063B8A9 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F08DE224692B90063B8A9 /* WeatherCollectionViewCell.swift */; };
 		C29F9F3122478C4C001E9019 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F9F3022478C4C001E9019 /* RestaurantViewController.swift */; };
@@ -78,6 +89,17 @@
 		C2495D4922464468002F378E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		C2495D4B2246465C002F378E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C2495D4D22464933002F378E /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
+		C25D67E8224A3068000078D5 /* RestaurantServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantServices.swift; sourceTree = "<group>"; };
+		C25D67EB224A3487000078D5 /* NearbyRestaurantModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyRestaurantModal.swift; sourceTree = "<group>"; };
+		C25D67ED224A34D6000078D5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		C25D67EF224A34EF000078D5 /* PlusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCode.swift; sourceTree = "<group>"; };
+		C25D67F1224A39F0000078D5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C25D67F3224A3A0D000078D5 /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
+		C25D67F5224A3A27000078D5 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		C25D67F7224A3A3C000078D5 /* Viewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		C25D67F9224A3A52000078D5 /* Southwest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Southwest.swift; sourceTree = "<group>"; };
+		C25D67FB224A3A6B000078D5 /* Northeast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Northeast.swift; sourceTree = "<group>"; };
+		C25D67FD224A3A80000078D5 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C29F08DC224692AB0063B8A9 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		C29F08DE224692B90063B8A9 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		C29F9F3022478C4C001E9019 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +306,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		C25D67EA224A315A000078D5 /* RestaurantModal */ = {
+			isa = PBXGroup;
+			children = (
+				C25D67EB224A3487000078D5 /* NearbyRestaurantModal.swift */,
+				C25D67ED224A34D6000078D5 /* Result.swift */,
+				C25D67EF224A34EF000078D5 /* PlusCode.swift */,
+				C25D67F1224A39F0000078D5 /* Photo.swift */,
+				C25D67F3224A3A0D000078D5 /* OpeningHour.swift */,
+				C25D67F5224A3A27000078D5 /* Geometry.swift */,
+				C25D67F7224A3A3C000078D5 /* Viewport.swift */,
+				C25D67F9224A3A52000078D5 /* Southwest.swift */,
+				C25D67FB224A3A6B000078D5 /* Northeast.swift */,
+				C25D67FD224A3A80000078D5 /* Location.swift */,
+			);
+			path = RestaurantModal;
+			sourceTree = "<group>";
+		};
 		C29F08DB224692920063B8A9 /* WeatherNibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +364,7 @@
 			children = (
 				C2BA847A22497BB70026C0D9 /* ServiceApiEndPoints.swift */,
 				C2BA847C224981C40026C0D9 /* WeatherServices.swift */,
+				C25D67E8224A3068000078D5 /* RestaurantServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -333,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				C2ACB90222498A8300A8AB87 /* WeatherModal */,
+				C25D67EA224A315A000078D5 /* RestaurantModal */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -458,6 +499,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weather_Restaurant_Demo/Pods-Weather_Restaurant_Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CDAlertView/CDAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -468,6 +510,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CDAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -492,6 +535,7 @@
 				C238EC2322462E3500F8C427 /* UITextField+Extensions.swift in Sources */,
 				C2ACB91E2249928F00A8AB87 /* City.swift in Sources */,
 				C238EC2922462E8800F8C427 /* UINavigationController+Extensions.swift in Sources */,
+				C25D67FA224A3A52000078D5 /* Southwest.swift in Sources */,
 				C29F9F3F2247C654001E9019 /* APIManager.swift in Sources */,
 				C238EC2F22462ECE00F8C427 /* Dictionary+Extensions.swift in Sources */,
 				C2495D4A22464468002F378E /* WeatherViewController.swift in Sources */,
@@ -501,27 +545,37 @@
 				C2495D4C2246465C002F378E /* Alert.swift in Sources */,
 				C238EC042246294F00F8C427 /* AppDelegate.swift in Sources */,
 				C2ACB9182249924C00A8AB87 /* Rain.swift in Sources */,
+				C25D67F8224A3A3C000078D5 /* Viewport.swift in Sources */,
 				C238EC2522462E4B00F8C427 /* UIView+Extensions.swift in Sources */,
 				C2ACB9162249923200A8AB87 /* Sy.swift in Sources */,
 				C29F9F3122478C4C001E9019 /* RestaurantViewController.swift in Sources */,
 				C2ACB912224991D400A8AB87 /* Wind.swift in Sources */,
 				C2ACB92222499A1200A8AB87 /* DateManager.swift in Sources */,
 				C2ACB920224992A600A8AB87 /* Coord.swift in Sources */,
+				C25D67EE224A34D6000078D5 /* Result.swift in Sources */,
+				C25D67F0224A34EF000078D5 /* PlusCode.swift in Sources */,
+				C25D67F2224A39F0000078D5 /* Photo.swift in Sources */,
 				C2495D4E22464933002F378E /* SizeUtil.swift in Sources */,
 				C2060F46224A0CC300B3E512 /* UIImageView+Extensions.swift in Sources */,
 				C29F9F3322479927001E9019 /* CustomNavigationController.swift in Sources */,
 				C238EC2D22462EBE00F8C427 /* UIScreen+Extensions.swift in Sources */,
+				C25D67F4224A3A0D000078D5 /* OpeningHour.swift in Sources */,
 				C29F9F412247DB8B001E9019 /* ConnectionHelper.swift in Sources */,
+				C25D67FC224A3A6B000078D5 /* Northeast.swift in Sources */,
 				C2ACB91A2249926200A8AB87 /* Main.swift in Sources */,
+				C25D67EC224A3487000078D5 /* NearbyRestaurantModal.swift in Sources */,
+				C25D67F6224A3A27000078D5 /* Geometry.swift in Sources */,
 				C29F9F3522479A04001E9019 /* SplashViewController.swift in Sources */,
 				C29F9F3722479B45001E9019 /* AppHelper.swift in Sources */,
 				C2ACB91C2249927900A8AB87 /* Cloud.swift in Sources */,
 				C238EC1B22462D6A00F8C427 /* BaseViewController.swift in Sources */,
 				C238EC3322462F1200F8C427 /* UIButton+Extensions.swift in Sources */,
 				C238EC2B22462E9F00F8C427 /* UILabel+Extensions.swift in Sources */,
+				C25D67E9224A3068000078D5 /* RestaurantServices.swift in Sources */,
 				C2ACB90E2249917E00A8AB87 /* Forcast.swift in Sources */,
 				C29F9F3C2247A426001E9019 /* RestaurantTableViewCell.swift in Sources */,
 				C238EC3622462F5E00F8C427 /* Constants.swift in Sources */,
+				C25D67FE224A3A80000078D5 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,6 @@ import CoreLocation
 class WeatherViewController: BaseViewController {
     
     let locationManager = CLLocationManager()
-    var forcastList : [List] = [List]()
     var weatherForcasts:Forcast?
     
     @IBOutlet weak var weatherImage: UIImageView!
@@ -44,7 +43,13 @@ class WeatherViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        self.weatherForcastService(lat: "\(35)", lon: "\(139)")
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+       self.locationManager.stopUpdatingLocation()
     }
     
     func setWeatherData() {

@@ -36,6 +36,7 @@ struct Constants {
     static let USER_DEFAULTS                                    = UserDefaults.standard
     
     static let APP_ID = "dc4801451a2a6f2a725721299c7c4e99"
+    static let RESTAURANT_ID = "AIzaSyASsrdsiQ9XYq0Pd6lU-o4lxBRrFE_hUno"
     
     // USER DEFAULTS
     static let USER_LOGGED_IN = "user_logged_in";
