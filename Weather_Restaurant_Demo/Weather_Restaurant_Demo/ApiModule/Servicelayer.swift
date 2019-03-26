@@ -45,7 +45,7 @@ class Servicelayer: NSObject {
         
         Alamofire.request(apiName, method:HTTPMethod.post, parameters: parameters , encoding:  JSONEncoding.default, headers: APIManager.headers()).validate().responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
@@ -68,53 +68,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
                 
             }
         }
@@ -127,8 +80,8 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
@@ -157,54 +110,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
         }
     }
@@ -217,8 +122,8 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
@@ -247,54 +152,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    //ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
         }
     }
@@ -306,15 +163,15 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideOldLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
-        Alert.showOldLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method:HTTPMethod.post, parameters: parameters , encoding:  JSONEncoding.default, headers: APIManager.headers()).validate().responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideOldLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
@@ -337,54 +194,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideOldLoader()
-                    
-                    return
-                }
-                Alert.hideOldLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
         }
     }
@@ -397,15 +206,15 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
-        Alert.showLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method:HTTPMethod.put, parameters: parameters , headers: APIManager.headers()).validate().responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
@@ -428,54 +237,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
         }
     }
@@ -487,16 +248,16 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
-        Alert.showLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method: .delete, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             switch(response.result) {
             case .success(let data):
                 
@@ -518,58 +279,8 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
-            
         }
-        
     }
     
     
@@ -580,17 +291,17 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
-        Alert.showLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         
         Alamofire.request(apiName, method: .delete, parameters: nil, encoding: URLEncoding.default,headers:APIManager.headers()).validate().responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             switch(response.result) {
             case .success(let data):
                 
@@ -612,54 +323,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
             
         }
@@ -685,61 +348,9 @@ class Servicelayer: NSObject {
                 }
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
             }
         }
     }
-    
-    
-    
-    
-    
     
     /**
      ** GET Method for calling API
@@ -757,16 +368,16 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
-        Alert.showLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method: .get, parameters: ["":""], encoding: URLEncoding.default, headers:APIManager.headers() ).responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             switch(response.result) {
             case .success(let data):
                 
@@ -786,58 +397,8 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
-            
         }
-        
     }
     
     static func requestWithGETWithoutLoader( apiName : String,
@@ -874,36 +435,7 @@ class Servicelayer: NSObject {
                 }
                 
             case .failure(_):
-                //print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    
-                    return
-                }
-                
-                break
-                
+                print("Request failed with error: \(response.result.error!)")
             }
         }
         
@@ -912,7 +444,7 @@ class Servicelayer: NSObject {
     // Show the alert View
     static func showAlertView (message:NSString,title:NSString) {
         
-        Alert.showAlert(title: title as String, message: message as String)
+        Alert.sharedInstance.showAlert(title: title as String, message: message as String)
         
     }
     
@@ -923,22 +455,22 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         //   Alert.showLoader(message: "")
-        Alert.hideLoader();
+        Alert.sharedInstance.hideLoader();
         
         
         Alamofire.request(apiName, method:HTTPMethod.post, parameters: parameters , encoding: JSONEncoding.default, headers: header).responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
                 
-                Alert.hideLoader();
+                Alert.sharedInstance.hideLoader();
                 
                 print(response)
                 /* if response.result.value != nil{
@@ -949,66 +481,15 @@ class Servicelayer: NSObject {
                 if let value: Any = response.result.value as AnyObject? {
                     let response = JSON(value)
                     completionHandler(true, response   ,nil)
-                    Alert.hideLoader();
+                    Alert.sharedInstance.hideLoader();
                     // let response = JSON(value)
                 }
                 
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
-            
-            
         }
-        
     }
     
     
@@ -1020,23 +501,20 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
-        Alert.showLoader(message: "")
-        
-        
-        
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: header).responseJSON{ (response:DataResponse<Any>) in
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
                 
-                Alert.hideLoader();
+                Alert.sharedInstance.hideLoader();
                 
                 print(response)
                 /* if response.result.value != nil{
@@ -1053,54 +531,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
         }
     }
@@ -1112,12 +542,12 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
-        Alert.showLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         
         let header1 =  ["Authorization":"Bearer cf84950a5509bc24656e3b746e905b484e4e746b"]
@@ -1134,12 +564,12 @@ class Servicelayer: NSObject {
         
         
         Alamofire.request(apiName, method: .get, parameters: parameters, headers: header).responseJSON{ (response:DataResponse<Any>) in
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
                 
-                Alert.hideLoader();
+                Alert.sharedInstance.hideLoader();
                 
                 print(response)
                 /* if response.result.value != nil{
@@ -1156,57 +586,7 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
-            
-            
         }
     }
     
@@ -1218,21 +598,25 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
-        Alert.showLoader(message: "")
+        if let paramJson = parameters.prettyPrintedJSON {
+            print(paramJson)
+        }
+        
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method: .get, parameters: parameters, encoding: URLEncoding.queryString,headers:APIManager.headers() ).validate().responseJSON{ (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
                 
-                Alert.hideLoader();
+                Alert.sharedInstance.hideLoader();
                 
                 print(response)
                 /* if response.result.value != nil{
@@ -1253,58 +637,7 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
-            
-            
         }
     }
     
@@ -1316,8 +649,8 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
         
@@ -1348,54 +681,6 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    //self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
         }
     }
@@ -1409,15 +694,15 @@ class Servicelayer: NSObject {
         
         //Mark check internet Connectivity
         if !ConnectionHelper.sharedInstance.isConnectedToNetwork(){
-            Alert.hideLoader()
-            Alert.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
+            Alert.sharedInstance.hideLoader()
+            Alert.sharedInstance.showAlert(title: "No Internet Connection", message: "Make sure your device is connected to internet");
             return;
         }
-        Alert.showLoader(message: "")
+        Alert.sharedInstance.showLoader(message: "")
         
         Alamofire.request(apiName, method:HTTPMethod.post, parameters: parameters , encoding:  JSONEncoding.default, headers: APIManager.headersForJsonEncoding()).responseJSON { (response:DataResponse<Any>) in
             
-            Alert.hideLoader();
+            Alert.sharedInstance.hideLoader();
             
             switch(response.result) {
             case .success(let data):
@@ -1438,66 +723,12 @@ class Servicelayer: NSObject {
                 
             case .failure(_):
                 print("Request failed with error: \(response.result.error!)")
-                //403,200
-                
-                print((response.result.error! as NSError).localizedDescription)
-                
-                if response.response?.statusCode == STATUS_CODE.VALIDATION_ERROR{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.FORBIDDEN{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "ALERT", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.NOT_FOUND{
-                    let response_json = JSON(response.data)
-                    
-                    print(response_json)
-                    
-                    if isShowError {
-                        Alert.showAlert(title: "NOT FOUND", message: response_json["message"].string ?? "no error in message")
-                    }
-                }
-                
-                if response.response?.statusCode == STATUS_CODE.UNAUTHENTICATED{
-                    ServerErrorHandling.updateAccessToken()
-                    Alert.hideLoader()
-                    
-                    return
-                }
-                Alert.hideLoader()
-                
-                if isShowError {
-                    self.showAlertView(message: (response.result.error!).localizedDescription as NSString, title: "Error From Server")
-                }
-                
-                break
-                
             }
-            
-            
         }
-        
     }
     
     func getAuthorizationHeader () -> Dictionary<String,String>{
         
-        // if let token = Singleton.sharedInstance.CurrentUser!.token {
-        //   return ["token":token,"Content-Type":"application/json"]
-        //  }
         return ["Content-Type":"application/json"]
     }
     

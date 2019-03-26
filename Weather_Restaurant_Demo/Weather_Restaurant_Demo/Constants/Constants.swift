@@ -35,6 +35,8 @@ struct Constants {
     static let UIWINDOW                                         = UIApplication.shared.delegate!.window!
     static let USER_DEFAULTS                                    = UserDefaults.standard
     
+    static let APP_ID = "dc4801451a2a6f2a725721299c7c4e99"
+    
     // USER DEFAULTS
     static let USER_LOGGED_IN = "user_logged_in";
     static let IS_TUTORIAL_SHOWN = "is_tutorial_shown";

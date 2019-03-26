@@ -12,7 +12,7 @@ import CDAlertView
 
 class Alert: NSObject {
     
-    static let sharedInstance = Alert()
+    static let sharedInstance: Alert = Alert()
     
     private override init(){}
     

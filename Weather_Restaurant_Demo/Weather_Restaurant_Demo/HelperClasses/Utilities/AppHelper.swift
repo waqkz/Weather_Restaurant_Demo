@@ -11,7 +11,7 @@ import UIKit
 
 class AppHelper{
     
-    static let sharedInstance = AppHelper()
+    static let sharedInstance: AppHelper = AppHelper()
     
     private init(){}
     

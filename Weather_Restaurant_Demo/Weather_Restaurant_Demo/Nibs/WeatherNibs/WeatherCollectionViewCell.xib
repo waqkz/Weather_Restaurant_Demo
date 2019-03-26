@@ -23,20 +23,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="184" height="144"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKB-dV-bOK">
-                                <rect key="frame" x="75" y="31.5" width="34" height="21"/>
+                                <rect key="frame" x="75" y="26.5" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-GF-dhv">
-                                <rect key="frame" x="52" y="54.5" width="80" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-GF-dhv">
+                                <rect key="frame" x="72" y="49.5" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HOF-GF-dhv" secondAttribute="height" multiplier="2:1" id="Fr3-ff-vCI"/>
+                                    <constraint firstAttribute="width" secondItem="HOF-GF-dhv" secondAttribute="height" multiplier="1:1" id="Fr3-ff-vCI"/>
                                     <constraint firstAttribute="height" constant="40" id="T6k-MA-aUA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l11-jQ-P5d">
-                                <rect key="frame" x="82" y="99.5" width="20" height="21"/>
+                                <rect key="frame" x="82" y="94.5" width="20" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                             <constraint firstItem="HOF-GF-dhv" firstAttribute="top" secondItem="AKB-dV-bOK" secondAttribute="bottom" constant="2" id="DJn-Gz-2k4"/>
                             <constraint firstItem="AKB-dV-bOK" firstAttribute="centerX" secondItem="hk2-Ik-91C" secondAttribute="centerX" id="WMJ-vP-qEJ"/>
                             <constraint firstItem="HOF-GF-dhv" firstAttribute="centerX" secondItem="AKB-dV-bOK" secondAttribute="centerX" id="cb7-wO-nIR"/>
-                            <constraint firstItem="AKB-dV-bOK" firstAttribute="centerY" secondItem="hk2-Ik-91C" secondAttribute="centerY" constant="-30" id="nhw-J9-YX3"/>
+                            <constraint firstItem="AKB-dV-bOK" firstAttribute="centerY" secondItem="hk2-Ik-91C" secondAttribute="centerY" constant="-35" id="nhw-J9-YX3"/>
                             <constraint firstItem="l11-jQ-P5d" firstAttribute="centerX" secondItem="HOF-GF-dhv" secondAttribute="centerX" id="uCj-ZZ-MlO"/>
                         </constraints>
                     </view>
@@ -62,6 +62,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="PAt-nN-JAq"/>
             <size key="customSize" width="184" height="144"/>
+            <connections>
+                <outlet property="forcastDay" destination="AKB-dV-bOK" id="YPC-7t-D6c"/>
+                <outlet property="forcastImage" destination="HOF-GF-dhv" id="tgd-vO-i0d"/>
+                <outlet property="forcastTemp" destination="l11-jQ-P5d" id="pwa-Aa-QuS"/>
+            </connections>
             <point key="canvasLocation" x="105.59999999999999" y="-6.2968515742128943"/>
         </collectionViewCell>
     </objects>

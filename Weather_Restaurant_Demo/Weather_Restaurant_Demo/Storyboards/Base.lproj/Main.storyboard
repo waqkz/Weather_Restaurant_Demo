@@ -103,24 +103,24 @@
                                                     <action selector="popularRestaurantAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OaX-Ar-gFx"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="0cK-C3-t83">
-                                                <rect key="frame" x="20" y="174.5" width="160" height="80"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image" translatesAutoresizingMaskIntoConstraints="NO" id="0cK-C3-t83">
+                                                <rect key="frame" x="20" y="174.5" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="EpQ-Al-v82"/>
-                                                    <constraint firstAttribute="width" secondItem="0cK-C3-t83" secondAttribute="height" multiplier="2:1" id="yX5-Tq-KUm"/>
+                                                    <constraint firstAttribute="width" secondItem="0cK-C3-t83" secondAttribute="height" multiplier="1:1" id="yX5-Tq-KUm"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQs-pA-JdH">
-                                                <rect key="frame" x="195" y="174.5" width="160" height="80"/>
+                                                <rect key="frame" x="115" y="174.5" width="240" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C | F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMG-X0-bow">
-                                                        <rect key="frame" x="85.5" y="24" width="30" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMG-X0-bow">
+                                                        <rect key="frame" x="125.5" y="24" width="16.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqp-76-kIs">
-                                                        <rect key="frame" x="45" y="19" width="40.5" height="42"/>
+                                                        <rect key="frame" x="85" y="19" width="40.5" height="42"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="37">
                                                                 <attributes>
@@ -153,8 +153,8 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precipitation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-kc-uHx">
-                                                                <rect key="frame" x="8" y="55.5" width="96" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-kc-uHx">
+                                                                <rect key="frame" x="22" y="55.5" width="67.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -222,10 +222,10 @@
                                                 </constraints>
                                             </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pP-ul-fOd">
-                                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="f5f-00-Ieb"/>
+                                                    <constraint firstAttribute="height" constant="150" id="f5f-00-Ieb"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lcT-5B-Stu">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -288,7 +288,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="weatherCity" destination="82L-Sf-GvK" id="f4g-hS-5yh"/>
+                        <outlet property="weatherDay" destination="S7w-Dm-brK" id="r8A-zt-Pb3"/>
+                        <outlet property="weatherForcast" destination="KKp-Ks-sld" id="wqY-60-aeE"/>
                         <outlet property="weatherForcastCollectionView" destination="2pP-ul-fOd" id="W5i-oP-wYG"/>
+                        <outlet property="weatherHumidity" destination="uCP-Y5-jhe" id="ZXq-96-cCC"/>
+                        <outlet property="weatherImage" destination="0cK-C3-t83" id="19h-bj-COP"/>
+                        <outlet property="weatherPercipitation" destination="UOX-WN-VrV" id="HCt-Q5-SYP"/>
+                        <outlet property="weatherTemperature" destination="Pqp-76-kIs" id="kiV-PZ-HHw"/>
+                        <outlet property="windSpeed" destination="k7n-Dm-faj" id="few-rL-SZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
